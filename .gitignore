@@ -31,3 +31,9 @@ MANIFEST
 # Locks
 *.lock
 
+
+site/content/
+
+*.content
+
+site/resources/_gen/
