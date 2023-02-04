@@ -37,3 +37,5 @@ site/content/
 *.content
 
 site/resources/_gen/
+
+blog/.obsidian/
