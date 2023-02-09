@@ -39,9 +39,5 @@ site/content/
 site/resources/_gen/
 
 blog/.obsidian/
-
+blog/articles/
 blog/Excalidraw/
-
-site/public/
-
-site/static/
