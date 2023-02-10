@@ -98,7 +98,7 @@ for file in os.listdir('bot/cogs'):
 
     file_name = file.split('.')[0]
     extensions[file_name] = True
-    import_path = 'cogs.' + file_name
+    import_path = 'bot.cogs.' + file_name
     asyncio.run(bot.load_extension(import_path))
 
 
