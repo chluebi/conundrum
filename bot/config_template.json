@@ -1,4 +1,6 @@
 {
     "invite":"",
-    "token":""
+    "token":"",
+    "prefix":"b ",
+    "owner":0
 }

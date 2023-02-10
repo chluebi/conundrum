@@ -43,3 +43,5 @@ blog/Files/
 site/public/
 
 bot/config.json
+
+bot.log
