@@ -45,3 +45,8 @@ for all, full, name, extension in pmedia.findall(s):
 
 with open(f'{md_destination_path}/{compact_title}.md', 'w+') as f:
     f.write(new)
+
+os.system(f'git add {md_destination_path}/*')
+os.system(f'git add {media_destination_path}/*')
+os.system(f'git commit -m \"added article {compact_title}\"')
+os.system(f'git push origin')
