@@ -19,8 +19,6 @@
 	}
 
 	tp.file.move("export/to_export");
-	console.log(tp.user);
-	console.log(tp.user.export_python);
 
 	await tp.user.export_python();
 	
