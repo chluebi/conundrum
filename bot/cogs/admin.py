@@ -23,6 +23,7 @@ class AdminCog(commands.Cog):
     @admin.group(name='reload')
     async def place_start(self, ctx):
         os.system('git pull')
+        os.system('rm -rf site/public')
         os.system('cd site && hugo')
         await util.send_embed(ctx, util.success_embed(ctx, f'Reloaded Site.'))
 
