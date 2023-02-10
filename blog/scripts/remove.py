@@ -17,8 +17,8 @@ compact_title = title.replace(' ', '')[:50]
 
 changed = False
 
-if os.path.exists(f'{md_destination_path}/{compact_title}'):
-    os.remove(f'{md_destination_path}/{compact_title}')
+if os.path.exists(f'{md_destination_path}/{compact_title}.md'):
+    os.remove(f'{md_destination_path}/{compact_title}.md')
     changed = True
 
 if os.path.exists(f'{media_destination_path}/{compact_title}'):
