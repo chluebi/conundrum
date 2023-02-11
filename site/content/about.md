@@ -15,7 +15,7 @@ I am not in the business of making this website a specific outlet for my various
 
 This site runs on [Hugo](https://gohugo.io/) and [Nginx](https://www.nginx.com/).
 Find the source code [here](https://github.com/chluebi/website).
-I am using a modified version of the [m10c](https://github.com/vaga/hugo-theme-m10c), specific thanks to vaga for making this lovely theme and making it open source.
+I am using a modified version of the [m10c](https://github.com/vaga/hugo-theme-m10c) theme, specific thanks to vaga for making this lovely theme and making it open source.
 
 Your Access to this site may land in my access logs.
 I am currently employing no external services for analytics or monitoring.
