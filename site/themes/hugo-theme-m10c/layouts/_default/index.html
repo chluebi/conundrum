@@ -5,7 +5,7 @@
       {{ .Content }}
     </div>
     <ul class="posts-list">
-      {{ range where .Paginator.Pages "Type" "!=" "page" }}
+      {{ range (.Paginate (index .Site.Taxonomies.tags.featured.Pages)).Pages }}
         <li class="posts-list-item">
           <a class="posts-list-item-title" href="{{ .Permalink }}">{{ .Title }}</a>
           <span class="posts-list-item-description">
