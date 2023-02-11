@@ -10,7 +10,7 @@ media_destination_path = '../../site/static/media'
 with open(f'{md_src_path}/to_export.md', 'r') as f:
     s = f.read()
 
-ptitle = re.compile(r'title: "([\w\d\s\.-]*)"')
+ptitle = re.compile(r'title: "(.*)"')
 
 title = ptitle.findall(s)[0]
 compact_title = title.replace(' ', '')[:50]

@@ -11,10 +11,15 @@ media_destination_path = '../../site/static/media'
 with open(f'{md_src_path}/to_export.md', 'r') as f:
     s = f.read()
 
-ptitle = re.compile(r'title: "([\w\d\s\.-]*)"')
+ptitle = re.compile(r'title: "(.*)"')
 
 title = ptitle.findall(s)[0]
-compact_title = title.replace(' ', '')[:50]
+
+bad_symbols = [' ', '!', '?', '-']
+compact_title = title
+for sym in bad_symbols:
+    compact_title = compact_title.replace(sym, '')
+compact_title = compact_title[:50]
 
 
 if os.path.exists(f'{media_destination_path}/{compact_title}'):
