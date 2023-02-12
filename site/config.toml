@@ -40,8 +40,8 @@ paginate = 8
 
 
 [params.style]
-    darkestColor = "#242930"
-    darkColor = "#353b43"
-    lightColor = "#828a91"
+    darkestColor = "#131516"
+    darkColor = "#242930"
+    lightColor = "#bec9d3"
     lightestColor = "#ffffff"
-    primaryColor = "#8959d1"
+    primaryColor = "#b79ae2"
