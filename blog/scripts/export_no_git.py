@@ -48,7 +48,7 @@ for all, full, name, extension in pmedia.findall(s):
     new = new.replace(all, f'![{name}](/media/{compact_title}/{new_name})')
 
 
-for k, s in {'\{': '\\\{', '\}': '\\\}'}.items():
+for k, s in {'\{': '\\\{', '\}': '\\\}', '\;': '\\\;', '\%': '\\\%'}.items():
     new = new.replace(k, s)
 
 

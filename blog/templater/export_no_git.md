@@ -9,7 +9,7 @@
 	for (m of matches) {
 		let fullname = m[1];
 		let head = m[2];
-		let f = await ea.createPNG("Excalidraw/" + fullname, 2);
+		let f = await ea.createPNG("Excalidraw/" + fullname, 1.3);
 		
 		var fileReader = new FileReader();
 		fileReader.onload = function() {
