@@ -8,7 +8,7 @@ media_src_path = '../Files'
 md_destination_path = '../../site/content/posts'
 media_destination_path = '../../site/static/media'
 
-with open(f'{md_src_path}/to_export.md', 'r') as f:
+with open(f'{md_src_path}/to_export.md', 'r', encoding='utf-8') as f:
     s = f.read()
 
 ptitle = re.compile(r'title: "(.*)"')
@@ -46,6 +46,10 @@ for all, full, name, extension in pmedia.findall(s):
     else:
         shutil.copy2(f'{media_src_path}/{old_name}', f'{media_destination_path}/{compact_title}/{new_name}')
     new = new.replace(all, f'![{name}](/media/{compact_title}/{new_name})')
+
+
+for k, s in {'\{': '\\\{', '\}': '\\\}'}.items():
+    new = new.replace(k, s)
 
 
 with open(f'{md_destination_path}/{compact_title}.md', 'w+') as f:

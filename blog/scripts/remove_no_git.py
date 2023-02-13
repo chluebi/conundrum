@@ -7,7 +7,7 @@ md_src_path = '../export'
 md_destination_path = '../../site/content/posts'
 media_destination_path = '../../site/static/media'
 
-with open(f'{md_src_path}/to_export.md', 'r') as f:
+with open(f'{md_src_path}/to_export.md', 'r', encoding='utf-8') as f:
     s = f.read()
 
 ptitle = re.compile(r'title: "(.*)"')
