@@ -7,7 +7,7 @@ date: 2023-02-13
 draft: false
 
   
-tags: ["computer science"]
+tags: ["featured", "computer science"]
 ---
 ### The formula
 $$
