@@ -94,7 +94,7 @@ As all of our inputs to the encoding function had a minimum distance of $1$ (as 
 A decoding function now takes all the different elements in $A^{n}$ and converts them back into their original message in $A^{k}$ (or at least tries to).
 
 Wait, why does it take all elements in $A^{n}$ and not just in $C \subseteq A^{n}$ as those are only our error-correcting codes?
-The answer is: errors. As stated in the motivation, the goal is *to correct errors*, be they caused by interference or anything else. This means that we assume that between encoding and decoding there is a some kind of “transport" of the message which changes symbols in the codewords, maybe by a malicious attacker.
+The answer is: errors. As stated in the motivation, the goal is *to correct errors*, be they caused by interference or anything else. This means that we assume that between encoding and decoding there is a some kind of "transport" of the message which changes symbols in the codewords, maybe by a malicious attacker.
 
 
 **(15, 3) Continued Example:**
@@ -117,7 +117,7 @@ $$1,0,1$$
 $$1, 0, 1$$
 $$1, 0, 1$$
 $$1, 0, 1$$
-Now take the “average" (in the sense that we always pick the majority of symbols) of each column:
+Now take the "average" (in the sense that we always pick the majority of symbols) of each column:
 $$= (1, 0, 1)$$
 And as we see, the code has been successfully decoded.
 
