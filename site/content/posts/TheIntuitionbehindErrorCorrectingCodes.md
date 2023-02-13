@@ -69,7 +69,7 @@ Simple counting will give the answer of $10$. This is the Hamming distance betwe
 ##### Minimum Distance
 When speaking about error-correcting codes (reminder: error-correcting codes are sets! The actual strings are called codewords), the minimum distance is a statement about the entire error-correcting code: What's the minimum number of times you have to change a symbol on one codeword to make it into any other codeword?
 
-This is an extremely relevant question, because it gives a measure of the “robustness” of an error-correcting code. Of course in the end we want to decode the codewords again, but if an attack is able to change only very few symbols to give use a different codeword, we will decode the wrong message! As such, the minimum distance may also be interpreted as a worst-case analysis of a given error-correcting code.
+This is an extremely relevant question, because it gives a measure of the "robustness" of an error-correcting code. Of course in the end we want to decode the codewords again, but if an attack is able to change only very few symbols to give use a different codeword, we will decode the wrong message! As such, the minimum distance may also be interpreted as a worst-case analysis of a given error-correcting code.
 
 **Example:**
 Let the set of error correcting codes defined over the alphabet $\\{0, 1\\}$ be
@@ -94,7 +94,7 @@ As all of our inputs to the encoding function had a minimum distance of $1$ (as 
 A decoding function now takes all the different elements in $A^{n}$ and converts them back into their original message in $A^{k}$ (or at least tries to).
 
 Wait, why does it take all elements in $A^{n}$ and not just in $C \subseteq A^{n}$ as those are only our error-correcting codes?
-The answer is: errors. As stated in the motivation, the goal is *to correct errors*, be they caused by interference or anything else. This means that we assume that between encoding and decoding there is a some kind of “transport” of the message which changes symbols in the codewords, maybe by a malicious attacker.
+The answer is: errors. As stated in the motivation, the goal is *to correct errors*, be they caused by interference or anything else. This means that we assume that between encoding and decoding there is a some kind of “transport" of the message which changes symbols in the codewords, maybe by a malicious attacker.
 
 
 **(15, 3) Continued Example:**
@@ -117,7 +117,7 @@ $$1,0,1$$
 $$1, 0, 1$$
 $$1, 0, 1$$
 $$1, 0, 1$$
-Now take the “average” (in the sense that we always pick the majority of symbols) of each column:
+Now take the “average" (in the sense that we always pick the majority of symbols) of each column:
 $$= (1, 0, 1)$$
 And as we see, the code has been successfully decoded.
 
