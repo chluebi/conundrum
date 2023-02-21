@@ -13,7 +13,7 @@ Blatant Obsidian Propaganda.
 
 
 ### What is Obsidian? Why is it so Great?
-Obsidian is an [open-source](https://github.com/obsidianmd) "hackable" Markdown editor, endlessly expendable with plugins. It could be called a dedicated IDE for note-taking, writing and solving exercises. As an IDE, if configured correctly, it becomes an all-in-one solution for tons of usage cases: Being a student, creative writing or even typesetting. It can be used in pure source editing mode but I find myself using Live Preview (WYSISWYG) mode more often than not.
+Obsidian is an [open-source](https://github.com/obsidianmd) "hackable" Markdown editor, endlessly expendable with plugins. It could be called a dedicated IDE for note-taking, writing and solving exercises. As an IDE, if configured correctly, it becomes an all-in-one solution for tons of usage cases: Being a student, creative writing or even typesetting. It can be used in pure source editing mode but I find myself using Live Preview (WYSIWYG) mode more often than not.
 
 The whole thing operates on the [Markdown](https://en.wikipedia.org/wiki/Markdown) format, which, although it comes with some limitations, has some immense strengths: Clean PDF output, intuitive syntax and easily expendable. As a STEM student, I am most delighted by its support for LaTeX Math mode, to the point that it basically works exactly like TeX. Importantly though, Markdown is a much less restrained format than LaTeX, which directly leads to great simplicity compared to using LaTeX. No overfull hboxes or minipage pain here.
 
