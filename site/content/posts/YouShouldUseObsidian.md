@@ -41,7 +41,7 @@ In practice this means that without even writing your own plugins, you can autom
 
 
 ### Obsidian isn't perfect 
-Being so focused on Markdown, Obsidian inherits the limitations of Markdown in its output, namely the limits on your influence on the output formatting. If you are prolific in LaTeX, you will miss a lot of control. In general, a lot of people who are high in the "tech-y" scale will probably scoff at Obsidian for many reasons. Basically, the types of people who will be turned off from Obsidian due to the fact that it's Chromium, will probably be right in not wanting to use it.
+Being so focused on Markdown, Obsidian inherits the limitations of Markdown in its output, namely the limits on your influence on the output formatting. If you are prolific in LaTeX, you will miss a lot of control. In general, a lot of people who are high in the "tech-y" scale will probably scoff at Obsidian for many reasons. Basically, the types of people who will be turned off from Obsidian due to the fact that it's Electron, will probably be right in not wanting to use it.
 
 Obsidian is a good main hub for all your needs, but it is not good at *everything*. For the love of god, do not use Obsidian to write any code, except for Templater JavaScript. Additionally, special formats may require specialized editors or viewers. That sadly also includes PDF, as the Obsidian PDF viewer at time of writing is... undesirable.
 
