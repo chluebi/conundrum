@@ -11,9 +11,12 @@ tags: ["featured", "productivity"]
 ---
 Blatant Obsidian Propaganda.
 
+##### Updates
+2023-06-06: Fixed mistakenly saying that Obsidian by itself is open-source, sadly it is not. Additionally, updated the negative point about the Obsidian PDF viewer because it's actually good now.
+
 
 ### What is Obsidian? Why is it so Great?
-Obsidian is an [open-source](https://github.com/obsidianmd) "hackable" Markdown editor, endlessly expendable with plugins. It could be called a dedicated IDE for note-taking, writing and solving exercises. As an IDE, if configured correctly, it becomes an all-in-one solution for tons of usage cases: Being a student, creative writing or even typesetting. It can be used in pure source editing mode but I find myself using Live Preview (WYSIWYG) mode more often than not.
+Obsidian is an open-source friendly (but sadly by itself closed-source) "hackable" Markdown editor, endlessly expendable with plugins. It could be called a dedicated IDE for note-taking, writing and solving exercises. As an IDE, if configured correctly, it becomes an all-in-one solution for tons of usage cases: Being a student, creative writing or even typesetting. It can be used in pure source editing mode, but I find myself using Live Preview (WYSIWYG) mode more often than not.
 
 The whole thing operates on the [Markdown](https://en.wikipedia.org/wiki/Markdown) format, which, although it comes with some limitations, has some immense strengths: Clean PDF output, intuitive syntax and easily expendable. As a STEM student, I am most delighted by its support for LaTeX Math mode, to the point that it basically works exactly like TeX. Importantly though, Markdown is a much less restrained format than LaTeX, which directly leads to great simplicity compared to using LaTeX. No overfull hboxes or minipage pain here.
 
@@ -43,7 +46,7 @@ In practice this means that without even writing your own plugins, you can autom
 ### Obsidian isn't perfect 
 Being so focused on Markdown, Obsidian inherits the limitations of Markdown in its output, namely the limits on your influence on the output formatting. If you are prolific in LaTeX, you will miss a lot of control. In general, a lot of people who are high in the "tech-y" scale will probably scoff at Obsidian for many reasons. Basically, the types of people who will be turned off from Obsidian due to the fact that it's Electron, will probably be right in not wanting to use it.
 
-Obsidian is a good main hub for all your needs, but it is not good at *everything*. For the love of god, do not use Obsidian to write any code, except for Templater JavaScript. Additionally, special formats may require specialized editors or viewers. That sadly also includes PDF, as the Obsidian PDF viewer at time of writing is... undesirable.
+Obsidian is a good main hub for all your needs, but it is not good at *everything*. For the love of god, do not use Obsidian to write any code, except for Templater JavaScript. Additionally, special formats may require specialized editors or viewers. That being said, with the newest updates, the Obsidian PDF viewer is now wonderful.
 
 ### Conclusion
 Obsidian is a wonderful little application and I hope to have convinced you to give it a try.
