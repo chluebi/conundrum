@@ -7,7 +7,7 @@ date: 2023-07-02
 draft: false
 
   
-tags: [featured, informatics, philosophy]
+tags: [featured, computer science, philosophy]
 ---
 A framing device for the role of Informatics in our shared world.
 
