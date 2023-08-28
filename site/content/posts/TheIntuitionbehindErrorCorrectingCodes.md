@@ -19,7 +19,6 @@ tags: ["featured", "mathematics", "discmath"]
 Alex wants to send Bernd a secret code $m$ explaining their plan to take over the world. The only problem is that local Iris-agents are jamming their communication, and therefore Alex cannot guarantee that the entire message will arrive unchanged.
 Is there some way that Alex and Bernd can develop a protocol that ensures that Bernd is *guaranteed* to receive the correct message from Alex?
 
-
 #### Encoding
 
 Assume that Alex and Bernd converse in binary. In other words, their **Alphabet** A is $\\{0, 1\\}$.
