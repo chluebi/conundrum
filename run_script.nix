@@ -8,5 +8,5 @@
     python310Packages.virtualenv
     python310Packages.discordpy
   ]);
-  runScript = "./venv-activate.sh 'python " + script + "'";
+  runScript = "./venv-activate.sh '" + script + "'";
 }).env
