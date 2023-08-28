@@ -1,0 +1,1 @@
+nix-shell run_script.nix --argstr script $1

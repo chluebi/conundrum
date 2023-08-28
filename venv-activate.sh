@@ -1,1 +1,1 @@
-virtualenv .venv && source .venv/bin/activate && bash
+virtualenv .venv && source .venv/bin/activate && $1
