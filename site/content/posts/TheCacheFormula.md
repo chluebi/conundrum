@@ -47,7 +47,7 @@ $001$, $011$ $\Rightarrow$ we get the cache address $001011$
 
 Notice that this is completely reversible, for example we can find that
 
-$111000 \Rightarrow 111, 100 \Rightarrow (7,0)$
+$111000 \Rightarrow 111, 000 \Rightarrow (7,0)$
 
 Now we are missing the final piece of the puzzle: Given an address of a cache access how do we find its cache address? It's easy: it's the last few bits.
 
