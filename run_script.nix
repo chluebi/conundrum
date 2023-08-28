@@ -7,6 +7,8 @@
     python310Packages.pip
     python310Packages.virtualenv
     python310Packages.discordpy
+    git
+    openssh
   ]);
   runScript = "./script-activate.sh '" + path + "' '" + script + "'";
 }).env
