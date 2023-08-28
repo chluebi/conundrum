@@ -1,0 +1,1 @@
+virtualenv .venv && source .venv/bin/activate && cd $1 && python $2

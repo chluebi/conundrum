@@ -1,1 +1,1 @@
-nix-shell run_script.nix --argstr script $1
+nix-shell run_script.nix --argstr path $1 --argstr script $2

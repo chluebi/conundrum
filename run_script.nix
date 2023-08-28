@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {}, script ? "" }:
+{ pkgs ? import <nixpkgs> {}, path ? "", script ? "" }:
 
 (pkgs.buildFHSUserEnv {
   name = "pipzone";
@@ -8,5 +8,5 @@
     python310Packages.virtualenv
     python310Packages.discordpy
   ]);
-  runScript = "./venv-activate.sh '" + script + "'";
+  runScript = "./script-activate.sh '" + path + "' '" + script + "'";
 }).env
