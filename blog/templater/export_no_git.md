@@ -2,7 +2,8 @@
 	const ea = ExcalidrawAutomate;
 	ea.reset();
 	const fs = app.vault.adapter.fs;
-	
+
+	let path = tp.file.path(relative=true).slice(0,-3);
 	let content = tp.file.content;
 	let re = /!\[\[(([\w\d\s\.-]*)\.excalidraw)\]\]/g;
 	let matches = [...content.matchAll(re)];
@@ -22,4 +23,4 @@
 
 	await tp.user.export_no_git_python();
 	
-	tp.file.move("articles/" + tp.file.title); %>
+	tp.file.move(path); %>
