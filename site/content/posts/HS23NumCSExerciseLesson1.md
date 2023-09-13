@@ -4,8 +4,8 @@ date: 2023-09-13
 draft: false
 tags:
   - numcs
-  - TA notes
-  - numcs TA notes
+  - TA_Notes
+  - numcs_TA_notesHS23
 ---
 
 ### Test stuff goes in here
