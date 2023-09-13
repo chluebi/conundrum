@@ -12,7 +12,15 @@ with open(f'{md_src_path}/to_export.md', 'r', encoding='utf-8') as f:
 
 ptitle = re.compile(r'title: "(.*)"')
 
-title = ptitle.findall(s)[0]
+all_titles = ptitle.findall(s)
+if len(all_titles) == 0:
+    ptitle = re.compile(r'title: \'(.*)\'')
+    all_titles = ptitle.findall(s)
+if len(all_titles) == 0:
+    ptitle = re.compile(r'title: (.*)')
+    all_titles = ptitle.findall(s)
+
+title = all_titles[0]
 compact_title = title.replace(' ', '')[:50]
 
 changed = False
