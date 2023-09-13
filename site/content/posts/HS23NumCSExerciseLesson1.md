@@ -9,7 +9,9 @@ tags:
 ---
 
 ### Test stuff goes in here
+
 ---
+
 ### Another slide here :3
 let's see how formula look
 
@@ -22,6 +24,8 @@ $$
 x \\\ y
 \end{pmatrix}
 $$
+
 ---
+
 # Last slide big title
 added something here
