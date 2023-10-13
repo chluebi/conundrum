@@ -22,8 +22,6 @@ Having my own blog, although one of the most prominent ideas of my early twentie
 
 Thinking is easy, making is hard. Or in the case of purely literary projects: Verbalizing is hard.
 
-{{< figure src="https://64.media.tumblr.com/a0b5c1cfe808294f0b41e10ef333d50b/2f80863f19cc92f5-22/s1280x1920/68c78e57a700d7f963ff89a0aa3300022f65f8a5.jpg" title="Being Forced to verbalize a thought" >}}
-
 Now I could of course just keep a diary or private note collection. But I'm afraid that will probably fail due to...
 
 ### Why Part 3: Mitteilungsbedürfnis
