@@ -23,9 +23,9 @@ $$2 \cdot \textrm{nnz}(A) + n + 1$$
 ### Examples
 $$
 \begin{pmatrix}
-1 & 0 & 2 \\
-3 & 4 & 5 \\
-0 & 0 & 0 \\
+1 & 0 & 2 \\\
+3 & 4 & 5 \\\
+0 & 0 & 0 \\\
 0 & 0 & 6
 \end{pmatrix}
 $$
@@ -70,9 +70,9 @@ And finally, after the last row:
 Here is another example:
 $$
 \begin{pmatrix}
-1 & 0 & 4 \\
-2 & 0 & 5 \\
-3 & 0 & 6 \\
+1 & 0 & 4 \\\
+2 & 0 & 5 \\\
+3 & 0 & 6
 \end{pmatrix}
 $$
 - `val = [1, 4, 2, 5, 3, 6]`
@@ -92,9 +92,9 @@ The sister format of compressed row storage is compressed column storage. The fo
 
 $$
 \begin{pmatrix}
-1 & 0 & 4 \\
-2 & 0 & 5 \\
-3 & 0 & 6 \\
+1 & 0 & 4 \\\
+2 & 0 & 5 \\\
+3 & 0 & 6 
 \end{pmatrix}
 $$
 Becomes:
