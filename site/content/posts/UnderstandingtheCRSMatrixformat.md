@@ -40,7 +40,7 @@ Now go through the first row, the $1$ is in the first column, so we get
 - `col = [1]`
 - `row_ptr = [1]`
 
-The $2$ is in the third row, so we get
+The $2$ is in the third column, so we get
 - `val = [1, 2]`
 - `col = [1, 3]`
 - `row_ptr = [1]`
