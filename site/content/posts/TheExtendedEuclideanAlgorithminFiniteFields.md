@@ -137,4 +137,4 @@ $$= (1 - x(x^2 + x + 1))(x^2+1) + (x)(x^4 + x^3 + 1)$$
 $$= (1 - x^3 - x^2 - x)(x^2+1) + (x)(x^4 + x^3 + 1)$$
 $$= (x^3 + x^2 + x + 1)(x^2+1) + (x)(x^4 + x^3 + 1)$$
 
-Therefore, the inverse of $x^2 + 1$ in the field $GF(2)_{x^4 + x^3 + 1}$ is $x^3 + x^2$.
+Therefore, the inverse of $x^2 + 1$ in the field $GF(2)_{x^4 + x^3 + 1}$ is $x^3 + x^2 + x + 1$.
