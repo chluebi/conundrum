@@ -112,14 +112,32 @@ Therefore, we want to solve the equation
 $$p(x^2+1) \equiv_{x^4 + x^3 + 1} 1$$
 In other words:
 $$\iff p(x^2+1) - q(x^4 + x^3 + 1) = 1$$
-Now as the polynomial we want to find the inverse of always has a smaller order than the polynomial the field is defined by, we actually reverse their position:
-$$\iff q(x^4 + x^3 + 1) - p(x^2+1) = -1$$
-Of course in our case of GF(2), $-1 = 1$ but it should still be kept in mind for the general case.
+
+Now notice the following:
+If we ever get an equation of this form:
+$$\iff a(x^2+1) + b(x^4 + x^3 + 1) = c$$
+Where $c$ is a number (or a polynomial of zeroth order)
+
+We can get
+$$\iff  c^ {-1}a(x^2+1) + c^ {-1}b(x^4 + x^3 + 1) = 1$$
+$$\iff  c^ {-1}a(x^2+1) - (-c^ {-1}b)(x^4 + x^3 + 1) = 1$$
+$$\iff p(x^2+1) - q(x^4 + x^3 + 1) = 1$$
+with $p = c^ {-1}a$ and $(-c^ {-1}b)$
+
+
+The big "top-level" idea therefore is to run the algorithm as many steps as needed until the rest is a polynomial of zeroth order $c$.
+
+Then we solve for $c$ like in the above sections until we get an equation of the form
+$$\iff a(x^2+1) + b(x^4 + x^3 + 1) = c$$
+And then turn this equation into a form
+$$\iff p(x^2+1) - q(x^4 + x^3 + 1) = 1$$
+from which we can read the inverse of $x^2 + 1$ as $p$.
+
 
 Let us start the Euclidean algorithm:
-$$(1)(x^4 + x^3 + 1) - (a)(x^2+1) = r$$
+$$(1)(x^4 + x^3 + 1) - (u)(x^2+1) = r$$
 
-Now we use polynomial division to find $a$ and $r$:
+Now we use polynomial division to find $u$ and $r$:
 (Remember that we are in GF(2), therefore $-1 = 1$)
 
 $$\frac{x^4+x^3+1}{x^2+1} = \frac{x^4+x^2}{x^2+1} + \frac{x^3 - x^2 + 1}{x^2+1} = x^2 + \frac{x^3+x^2+1}{x^2+1}$$
@@ -133,21 +151,52 @@ $$(1)(x^4 + x^3 + 1) - ((x^2 + x + 1)(x^2+1) + x) = 0$$
 $$(1)(x^4 + x^3 + 1) - (x^2 + x + 1)(x^2+1) - x = 0$$
 Giving us the next step:
 $$(1)(x^4 + x^3 + 1) - (x^2 + x + 1)(x^2+1) = x$$
-And with the next step we reach a step where we have something $= - 1$
-$$(1)(x^2 + 1) - (x)(x) = -1$$
+And with the next step we reach a step where we have something $= 1$
+$$(1)(x^2 + 1) - (x)(x) = 1$$
 
 
-And now we solve for $-1$:
-$$-1 = (1)(x^2 + 1) - (x)(x)$$
+And now we solve for $1$:
+$$1 = (1)(x^2 + 1) - (x)(x)$$
 Inserting for $x$:
 $$= (1)(x^2 + 1) - (x)((1)(x^4 + x^3 + 1) - (x^2 + x + 1)(x^2+1))$$
 $$= (1 - x(x^2 + x + 1))(x^2+1) + (x)(x^4 + x^3 + 1)$$
 $$= (1 - x^3 - x^2 - x)(x^2+1) + (x)(x^4 + x^3 + 1)$$
 $$= (x^3 + x^2 + x + 1)(x^2+1) + (x)(x^4 + x^3 + 1)$$
 Therefore:
-$$q(x^4 + x^3 + 1) - p(x^2+1) = -1$$
-$$\iff (x)(x^4+x^3+1) - (x^3 + x^2 + x + 1)(x^2+1) = -1$$
+$$q(x^4 + x^3 + 1) - p(x^2+1) = 1$$
+$$\iff (x)(x^4+x^3+1) - (x^3 + x^2 + x + 1)(x^2+1) = 1$$
 $$\iff (x^3 + x^2 + x + 1)(x^2+1) - (x)(x^4+x^3+1) = 1$$
 $$\iff (x^3 + x^2 + x + 1)(x^2+1) \equiv_{x^4 + x^3 + 1} 1$$
 
 Therefore, the inverse of $x^2 + 1$ in the field $GF(2)_{x^4 + x^3 + 1}$ is $x^3 + x^2 + x + 1$.
+
+
+### Some shorter examples with edge cases
+Notice that both of these examples get us a rest of zeroth order after only a single iteration of the euclidean algorithm, which then means that the "solving" part is trivial.
+
+###### Example
+Inverse of $x+2$ in $GF(3)[x]_{x^2 + 2x + 1}$
+
+Euclidean algorithm:
+$$(1)(x^2 + 2x + 1) - (u)(x+2) = r$$
+$$\iff (1)(x^2 + 2x + 1) - (x)(x+2) = 1$$
+Now getting it in the form of $p(x^2+1) - q(x^4 + x^3 + 1) = 1$
+$$\iff (-x)(x+2) - (-1)(x^2 + 2x + 1) = 1$$
+$$\iff (2x)(x+2) - (2)(x^2 + 2x + 1) = 1$$
+Therefore the inverse of $x+2$ is $2x$.
+
+
+###### Example
+
+Inverse of $2x+1$ in $GF(7)[x]_{x^2 + x + 1}$
+
+Euclidean algorithm:
+$$(1)(x²+x+1) - (u)(2x+1) = r$$
+Euclidean Division gives:
+$$(1)(x²+x+1) - (4x+2)(2x+1) = 6$$
+Now getting it in the form of $p(x^2+1) - q(x^4 + x^3 + 1) = 1$:
+$$(-(4x+2))(2x+1) - (-1)(x^2 + x + 1) = 6$$
+We multiply both sides with $6^{-1} = (-1)^{-1} = -1$
+$$(4x+2)(2x+1) - (1)(x^2 + x + 1) = 1$$
+
+Therefore, the inverse of $2x+1$ is $4x + 2$.
