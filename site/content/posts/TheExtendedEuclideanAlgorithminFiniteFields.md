@@ -25,7 +25,7 @@ At first, we just use the standard Euclidean algorithm, making sure to write dow
 
 Take $1 \cdot 144$ subtracted by the largest $k \in\mathbb{N}$ such that $k \cdot 54 < 144$:
 $$(1)(144) - (2)(54) = 36$$
-Now take $1 \cdot 54$subtracted by the largest $k \in\mathbb{N}$ such that $k \cdot 36 < 54$
+Now take $1 \cdot 54$ subtracted by the largest $k \in\mathbb{N}$ such that $k \cdot 36 < 54$
 $$(1)(54) - (1)(36) = 18$$
 Continue until you reach $0$ on the right-hand side
 $$(1)(36) - (2)(18) = 0$$
@@ -109,9 +109,12 @@ This exact same algorithm can be used for polynomials, it just gets computationa
 Let us find the inverse of $(x^2+1)$ in the field $GF(2)_{x^4 + x^3 + 1}$.
 
 Therefore, we want to solve the equation
-$$(x^2+1)p \equiv_{x^4 + x^3 + 1} 1$$
+$$p(x^2+1) \equiv_{x^4 + x^3 + 1} 1$$
 In other words:
-$$\iff (x^2+1)p - (x^4 + x^3 + 1)q = 1$$
+$$\iff p(x^2+1) - q(x^4 + x^3 + 1) = 1$$
+Now as the polynomial we want to find the inverse of always has a smaller order than the polynomial the field is defined by, we actually reverse their position:
+$$\iff q(x^4 + x^3 + 1) - p(x^2+1) = -1$$
+Of course in our case of GF(2), $-1 = 1$ but it should still be kept in mind for the general case.
 
 Let us start the Euclidean algorithm:
 $$(1)(x^4 + x^3 + 1) - (a)(x^2+1) = r$$
@@ -125,16 +128,26 @@ $$\frac{x^2 + x + 1}{x^2+1} = \frac{x^2 + 1}{x^2 + 1} + \frac{x}{x^2 + 1}$$
 $$\Rightarrow \frac{x^4+x^3+1}{x^2+1} = x^2 + x + 1 + \frac{x}{x^2+1}$$
 
 Therefore:
+$$(1)(x^4 + x^3 + 1) = ((x^2 + x + 1)(x^2+1) + x)$$
+$$(1)(x^4 + x^3 + 1) - ((x^2 + x + 1)(x^2+1) + x) = 0$$
+$$(1)(x^4 + x^3 + 1) - (x^2 + x + 1)(x^2+1) - x = 0$$
+Giving us the next step:
 $$(1)(x^4 + x^3 + 1) - (x^2 + x + 1)(x^2+1) = x$$
-$$(1)(x^2 + 1) - (x)(x) = 1$$
-$$(1)(x) - (x)(1) = 0$$
+And with the next step we reach a step where we have something $= - 1$
+$$(1)(x^2 + 1) - (x)(x) = -1$$
 
-And now we solve for $1$:
-$$1 = (1)(x^2 + 1) - (x)(x)$$
+
+And now we solve for $-1$:
+$$-1 = (1)(x^2 + 1) - (x)(x)$$
 Inserting for $x$:
 $$= (1)(x^2 + 1) - (x)((1)(x^4 + x^3 + 1) - (x^2 + x + 1)(x^2+1))$$
 $$= (1 - x(x^2 + x + 1))(x^2+1) + (x)(x^4 + x^3 + 1)$$
 $$= (1 - x^3 - x^2 - x)(x^2+1) + (x)(x^4 + x^3 + 1)$$
 $$= (x^3 + x^2 + x + 1)(x^2+1) + (x)(x^4 + x^3 + 1)$$
+Therefore:
+$$q(x^4 + x^3 + 1) - p(x^2+1) = -1$$
+$$\iff (x)(x^4+x^3+1) - (x^3 + x^2 + x + 1)(x^2+1) = -1$$
+$$\iff (x^3 + x^2 + x + 1)(x^2+1) - (x)(x^4+x^3+1) = 1$$
+$$\iff (x^3 + x^2 + x + 1)(x^2+1) \equiv_{x^4 + x^3 + 1} 1$$
 
 Therefore, the inverse of $x^2 + 1$ in the field $GF(2)_{x^4 + x^3 + 1}$ is $x^3 + x^2 + x + 1$.
