@@ -180,7 +180,7 @@ Inverse of $x+2$ in $GF(3)[x]_{x^2 + 2x + 1}$
 Euclidean algorithm:
 $$(1)(x^2 + 2x + 1) - (u)(x+2) = r$$
 $$\iff (1)(x^2 + 2x + 1) - (x)(x+2) = 1$$
-Now getting it in the form of $p(x^2+1) - q(x^4 + x^3 + 1) = 1$
+Now getting it in the form of $p(x+2) - q(x^2+2x+1) = 1$
 $$\iff (-x)(x+2) - (-1)(x^2 + 2x + 1) = 1$$
 $$\iff (2x)(x+2) - (2)(x^2 + 2x + 1) = 1$$
 Therefore the inverse of $x+2$ is $2x$.
@@ -194,9 +194,27 @@ Euclidean algorithm:
 $$(1)(x²+x+1) - (u)(2x+1) = r$$
 Euclidean Division gives:
 $$(1)(x²+x+1) - (4x+2)(2x+1) = 6$$
-Now getting it in the form of $p(x^2+1) - q(x^4 + x^3 + 1) = 1$:
+Now getting it in the form of $p(2x+1) - q(x^2+x+1) = 1$:
 $$(-(4x+2))(2x+1) - (-1)(x^2 + x + 1) = 6$$
 We multiply both sides with $6^{-1} = (-1)^{-1} = -1$
 $$(4x+2)(2x+1) - (1)(x^2 + x + 1) = 1$$
 
 Therefore, the inverse of $2x+1$ is $4x + 2$.
+
+
+###### Example
+
+Inverse of $x+4$ in $GF(5)[x]_{x^2 + 1}$
+
+Euclidean algorithm:
+$$(1)(x²+1) - (u)(x+4) = r$$
+Euclidean Division gives:
+$$(1)(x²+1) - (x+1)(x+4) = 2$$
+Now getting it in the form of $p(x^2+1) - q(x+4) = 1$:
+
+We multiply both sides with $2^{-1} = 3$
+$$(3)(x²+1) - (3x+3)(x+4) = 1$$
+$$- (3x+3)(x+4) + (3)(x²+1) = 1$$
+$$(-3x-3)(x+4) - (-3)(x²+1) = 1$$
+$$(2x+2)(x+4) - (2)(x²+1) = 1$$
+Therefore, the inverse of $x^2 + 1$ is $2x+2$.
