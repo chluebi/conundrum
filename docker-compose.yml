@@ -10,7 +10,9 @@ services:
       - "traefik.http.routers.hugo.rule=Host(`chluebi.com`)"
       - "traefik.http.routers.hugo.entrypoints=web"
       - "traefik.http.services.hugo.loadbalancer.server.port=1313"
-    restart: on-failure
+    restart: always
+    networks:
+      - traefik_network
 
   discord-bot:
     build: ./bot
@@ -21,3 +23,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: on-failure
+
+networks:
+  traefik_network:
+    external: true
