@@ -1,0 +1,23 @@
+services:
+  hugo-blog:
+    build: ./hugo
+    command: server --source /app/site --destination /app/public
+    volumes:
+      - ./site:/app/site
+      - ./public:/app/public
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nginx.rule=Host(`chluebi.com`)"
+      - "traefik.http.routers.nginx.entrypoints=web"
+      - "traefik.http.services.nginx.loadbalancer.server.port=1313"
+    restart: on-failure
+
+  discord-bot:
+    build: ./bot
+    environment:
+      DISCORD_TOKEN: ${DISCORD_TOKEN}
+      DISCORD_PREFIX: ${DISCORD_PREFIX}
+      DISCORD_OWNER_ID: ${DISCORD_OWNER_ID}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: on-failure

@@ -1,16 +1,12 @@
 import json
+import os
 import asyncio
 import discord
 from discord import Color, Embed
 from discord.ext import commands
 
-def parse_config():
-	with open(f'bot/config.json', 'r+') as f:
-		data = json.load(f)
-	return data
-
 async def is_owner(ctx):
-	check_true = ctx.author.id == discord_config['owner']
+	check_true = ctx.author.id == int(os.getenv('DISCORD_OWNER_ID'))
 	if not check_true:
 		await send_embed(ctx, error_embed(ctx, 'This is an owner-only command.'))
 	return check_true
@@ -39,6 +35,3 @@ async def send_embed(ctx: commands.Context, embed : Embed, delete=20):
 			await msg.delete()
 	except Exception as e:
 		await ctx.add_reaction('❌')
-
-
-discord_config = parse_config()

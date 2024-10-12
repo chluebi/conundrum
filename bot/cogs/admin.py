@@ -1,12 +1,13 @@
 import discord
 import random
+import docker
 import time
 import os
 from discord.ext import tasks, commands
 
-from bot import util
+import util
 
-config = util.discord_config
+docker_client = docker.from_env()
 
 class AdminCog(commands.Cog):
 
@@ -21,10 +22,8 @@ class AdminCog(commands.Cog):
     
     @commands.check(util.is_owner)
     @admin.group(name='reload')
-    async def place_start(self, ctx):
-        os.system('git pull')
-        os.system('rm -rf site/public')
-        os.system('cd site && hugo')
+    async def reload(self, ctx):
+        docker_client.containers.get('website-hugo-blog-1').exec_run('hugo --minify')
         await util.send_embed(ctx, util.success_embed(ctx, f'Reloaded Site.'))
 
 

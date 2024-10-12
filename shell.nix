@@ -1,13 +1,12 @@
 { pkgs ? import <nixpkgs> {} }:
-(pkgs.buildFHSUserEnv {
-  name = "pipzone";
-  targetPkgs = pkgs: (with pkgs; [
-    python310
-    python310Packages.pip
-    python310Packages.virtualenv
-    python310Packages.discordpy
-    git
-    openssh
-  ]);
-  runScript = "./venv-activate.sh bash";
-}).env
+
+pkgs.mkShell {
+  buildInputs = [
+    pkgs.python310
+    pkgs.python310Packages.pip
+    pkgs.python310Packages.discordpy
+    pkgs.python310Packages.docker
+    pkgs.git
+    pkgs.openssh
+  ];
+}

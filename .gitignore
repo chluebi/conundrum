@@ -48,3 +48,6 @@ bot.log
 blog/.trash/
 blog/export/to_export.md
 blog/templater/cmd.md
+.env
+public/*
+.direnv/*

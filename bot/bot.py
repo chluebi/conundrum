@@ -5,15 +5,13 @@ import discord
 import asyncio
 from discord.ext import commands
 
-from bot import util
-
-discord_config = util.parse_config()
+import util
 
 # determining intents
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot = commands.Bot(command_prefix=discord_config['prefix'], intents=intents)
+bot = commands.Bot(command_prefix=os.getenv('DISCORD_PREFIX'), intents=intents)
 
 logging.basicConfig(handlers=[logging.FileHandler('bot.log', 'a', encoding='utf-8')],
                     format='%(asctime)s - %(levelname)s - %(message)s')
@@ -24,6 +22,21 @@ async def on_ready():
     print('------------------')
     print(f'bot ready {bot.user.name}')
     print('------------------')
+
+    # iterate over all files in the "cogs folder"
+    for file in os.listdir('cogs'):
+        if file == "__pycache__":
+            continue
+
+        file_name = file.split('.')[0]
+        extensions[file_name] = True
+        import_path = 'cogs.' + file_name
+        await bot.load_extension(import_path)
+    
+
+extensions = {}
+
+    
 
 
 @bot.event
@@ -53,8 +66,6 @@ async def on_command_error(ctx, error):
 
     logging.error(error_message)
 
-
-extensions = {}
 
 @commands.check(util.is_owner)
 @bot.group(name='extension')
@@ -90,16 +101,6 @@ async def unload_extension(ctx : commands.Context, name : str):
     bot.unload_extension(import_path)
     await util.send_embed(ctx, util.success_embed(ctx, f'Extension ``{name}`` unloaded.'))
 
-    
-# iterate over all files in the "cogs folder"
-for file in os.listdir('bot/cogs'):
-    if file == "__pycache__":
-        continue
-
-    file_name = file.split('.')[0]
-    extensions[file_name] = True
-    import_path = 'bot.cogs.' + file_name
-    asyncio.run(bot.load_extension(import_path))
 
 
-bot.run(discord_config['token'])
+bot.run(os.getenv('DISCORD_TOKEN'))
