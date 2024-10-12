@@ -1,7 +1,7 @@
 services:
   hugo-blog:
     build: ./hugo
-    command: server --source /app/site --destination /app/public --baseURL http://chluebi.com/ --appendPort false
+    command: server --source /app/site --destination /app/public --baseURL http://chluebi.com/ --appendPort=false
     volumes:
       - ./site:/app/site
       - ./public:/app/public
