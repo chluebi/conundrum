@@ -53,7 +53,10 @@ for all, full, name, extension in pmedia.findall(s):
         os.rename(f'{media_src_path}/{old_name}', f'{media_destination_path}/{compact_title}/{new_name}')
     else:
         shutil.copy2(f'{media_src_path}/{old_name}', f'{media_destination_path}/{compact_title}/{new_name}')
-    new = new.replace(all, f'![{name}]({{ "/media/{compact_title}/{new_name}" | relURL }})') 
+    new = new.replace(
+        all,
+        f'{{{{< figure src="/media/{compact_title}/{new_name}" alt="{name}" caption="{name}" >}}}}'
+    ) 
 
 
 for k, s in {'\{': '\\\{', '\}': '\\\}', '\;': '\\\;', '\%': '\\\%'}.items():

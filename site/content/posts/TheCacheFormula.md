@@ -31,7 +31,7 @@ If we multiply all these quantities we get $S \cdot A \cdot B = \textrm{Cache si
 *Remark: It is almost always the case that all these quantities are a power of two for hardware related reasons, as such it is often ideal to write them as powers of two*
 
 
-![The Cache Formula 2023-02-13 21.13.55]({{ "/media/TheCacheFormula/TheCacheFormula2023-02-1321.13.55.png" | relURL }})
+{{< figure src="/media/TheCacheFormula/TheCacheFormula2023-02-1321.13.55.png" alt="The Cache Formula 2023-02-13 21.13.55" caption="The Cache Formula 2023-02-13 21.13.55" >}}
 
 In this example we have $2^3 = 8$ sets in red, each set consists of $2^2 = 4$ blocks in purple and each block consists of $2^3 = 8$ bytes in blue.
 
