@@ -5,7 +5,7 @@ theme = 'hugo-theme-m10c'
 
 enableRobotsTXT = true
 
-paginate = 8
+pagination.pagerSize = 8
 
 [caches]
   [caches.images]
