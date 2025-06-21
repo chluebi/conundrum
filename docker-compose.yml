@@ -14,16 +14,6 @@ services:
     networks:
       - traefik_network
 
-  discord-bot:
-    build: ./bot
-    environment:
-      DISCORD_TOKEN: ${DISCORD_TOKEN}
-      DISCORD_PREFIX: ${DISCORD_PREFIX}
-      DISCORD_OWNER_ID: ${DISCORD_OWNER_ID}
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    restart: on-failure
-
 networks:
   traefik_network:
     external: true
