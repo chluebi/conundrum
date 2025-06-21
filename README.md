@@ -1,2 +1,2 @@
 # website
-A fresh attempt at a personal website.
+A fresh attempt at a personal blog.
