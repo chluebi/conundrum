@@ -4,18 +4,15 @@ title: "About"
 
 ### About Me
 
-I'm a Computer Science Student who is interested in Mathematics, Formal Systems, Philosophy, Compilers, Structural Analysis, Boardgames, Education, Genre Fiction, Combinatorial Game Theory, TTRPGs, Linguistics, Jerma, Volleyball, Game Design and sometimes even Computer Science.
+I'm a Computer Science Student who is interested in Mathematics, Formal Methods, Philosophy, Proof Assistants, Dependent Type Theory, Compilers, Boardgames, Programming Language Design, Education, Genre Fiction, Combinatorial Game Theory, Game Design and whatever I am up to since the last edit of this page.
 
 This vast selection should not highlight expertise but rather a certain lack of focus when it comes to my interests. Transitively this lack of focus will most likely also appear in my work on this blog.
-
-I am not in the business of making this website a specific outlet for my various convictions, but rather as a creative outlet. This does not mean I have no politics or the desire to ignore politics, but rather just that I am a person who knows how internet harassment campaigns work.
 
 
 ### About this Site
 
-This site runs on [Hugo](https://gohugo.io/) and [Nginx](https://www.nginx.com/).
-Find the source code [here](https://github.com/chluebi/website).
-I am using a modified version of the [m10c](https://github.com/vaga/hugo-theme-m10c) theme, specific thanks to vaga for making this lovely theme and making it open source.
+This site runs on [Hugo](https://gohugo.io/).
+I am using a modified version of the [m10c](https://github.com/vaga/hugo-theme-m10c) theme, specific thanks to Github user vaga for making this lovely theme and making it open source.
 
-Your Access to this site may land in my access logs.
-I am currently employing no external services for analytics or monitoring.
+This site is hosted on Github Pages.
+I am currently not employing any external services for analytics or monitoring.
