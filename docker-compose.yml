@@ -1,19 +1,9 @@
 services:
   hugo-blog:
     build: ./hugo
-    command: server --source /app/site --destination /app/public --baseURL http://chluebi.com/ --appendPort=false
+    command: server --source /app/site --destination /app/public --baseURL http://localhost:1313 --appendPort=false
     volumes:
       - ./site:/app/site
       - ./public:/app/public
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.hugo.rule=Host(`chluebi.com`)"
-      - "traefik.http.routers.hugo.entrypoints=web"
-      - "traefik.http.services.hugo.loadbalancer.server.port=1313"
-    restart: always
-    networks:
-      - traefik_network
-
-networks:
-  traefik_network:
-    external: true
+    ports:
+      - "1313:1313"
