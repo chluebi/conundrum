@@ -5,6 +5,7 @@ draft: false
 tags:
   - ai
   - commentary
+  - featured
 ---
 Clickbait title: A Modern Luddite Guidebook to AI Discourse
 
