@@ -23,7 +23,7 @@ How are we supposed to interpret this? Well surely all of these rules are in eff
 > You should not do A and You should only do B up to x and You should do C when D happens
 
 If you care for formulas (and I do):
-$$A \land ((\neg C \rightarrow B) \land (C \rightarrow \neg B)) \land D \rightarrow E$$
+$$\neg A \land ((\neg C \rightarrow B) \land (C \rightarrow \neg B)) \land E \rightarrow D$$
 Don't worry about the exact values, but rather look at the entire formula: It's a conjunction of several values, AND AND AND AND AND.
 
 So what's the problem with that? It tends to not be the shape of our feelings.
@@ -74,7 +74,7 @@ Here's a list, raise your hand when you know them
 
 
 # Free lunches is not more than zero
-My point is not the solutions are hard, but rather that when we define rules in general, especially when by committee we tend to hold ourselves to the list of rules that are only rarely interlinked. 
+My point is not the solutions are hard, but rather that when we define rules in general, especially when by committee, we tend to hold ourselves to the list of rules that are only rarely interlinked. 
 
 This makes a lot of social sense. It draws a bunch of really nice borders you can show people stepped over. Any convoluted formula may require a convoluted explanation of a rulebreak and more competent enforcers. Nobody likes being in a community where the rules are nebulous. Plus how do you even calculate with social concepts like harassment/insults.
 
