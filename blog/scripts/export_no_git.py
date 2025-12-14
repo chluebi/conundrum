@@ -23,7 +23,7 @@ if len(all_titles) == 0:
 
 title = all_titles[0]
 
-bad_symbols = [' ', '!', '?', '-']
+bad_symbols = [' ', '!', '?', '-', '[', ']', '%', '(', ')', '/']
 compact_title = title
 for sym in bad_symbols:
     compact_title = compact_title.replace(sym, '')
@@ -55,8 +55,8 @@ for all, full, name, extension in pmedia.findall(s):
         shutil.copy2(f'{media_src_path}/{old_name}', f'{media_destination_path}/{compact_title}/{new_name}')
     new = new.replace(all, f'![{name}](/media/{compact_title}/{new_name})')
 
-for k, s in {'\{': '\\\{', '\}': '\\\}', '\;': '\\\;', '\%': '\\\%'}.items():
-    new = new.replace(k, s)
+for k, escaped_s in {r'\{': r'\\{', r'\}': r'\\}', r'\;': r'\\;', r'\%': r'\\%'}.items():
+    new = new.replace(k, escaped_s)
 
 
 with open(f'{md_destination_path}/{compact_title}.md', 'w+') as f:
