@@ -380,19 +380,19 @@ fibo_fast(int N) {
 
 A naive way to talk about speed of programs is to just talk about how many "steps" it takes to execute the program for a few inputs. In this case we may be able to see that ``fibo_fast`` takes fewer steps than ``fibo`` as soon as N gets larger and larger.
 
-Formally we say the runtime of ``fibo`` grows asymptotically faster than the runtime of ``fibo_fast``. With some induction we can prove the number of statements that ``fibo`` executes grows at an exponential rate in terms of $N$. That is very slow for big N. On the other hand, our fast method can be analysed to have runtime which grows at a linear rate. This can also be written as $$T(\textrm{fibo}_\textrm{fast}) \in O(n)$$
+Formally we say the runtime of ``fibo`` grows asymptotically faster than the runtime of ``fibo_fast``. With some induction we can prove the number of statements that ``fibo`` executes grows at an exponential rate in terms of $N$. That is very slow for big N. On the other hand, our fast method can be analysed to have runtime which grows at a linear rate. This can also be written as $$T(\\textrm{fibo}_\\textrm{fast}) \\in O(n)$$
 Okay but what does $O$ even mean? It's the "Big-O" notation and it seems like many never learn its proper mathematical meaning.
-$$O(g(n)) = \\{f \in \mathbb{R}^\mathbb{R}| \exists c > 0, \\; \exists k \geq 0, \\; \forall n \geq k, \\; 0 \leq f(n) \leq c \cdot g(n)\\}$$
+$$O(g(n)) = \\\\{f \\in \\mathbb{R}^\\mathbb{R}| \\exists c > 0, \\\\; \\exists k \\geq 0, \\\\; \\forall n \\geq k, \\\\; 0 \\leq f(n) \\leq c \\cdot g(n)\\\\}$$
 Intuitively: We do not care about adding values or constant factors, we just care about everything that grows as quickly or slower than $g$.
 
-From this it also follows trivially that $O(n) \subseteq O(n^2) \subseteq O(2^n)$ etc.
+From this it also follows trivially that $O(n) \\subseteq O(n^2) \\subseteq O(2^n)$ etc.
 
-The easiest way to prove that $f \in O(g(n))$ is via a limit proof:
-$$\lim_{n \rightarrow \infty} \: \frac{f(n)}{g(n)} = 0$$
+The easiest way to prove that $f \\in O(g(n))$ is via a limit proof:
+$$\\lim_{n \\rightarrow \\infty} \\: \\frac{f(n)}{g(n)} = 0$$
 You will learn to do this informally, if you haven't already. Including questionable applications of L'Hôpital's rule.
 
 e.g.
-$$\lim_{n \rightarrow \infty} \: \frac{n^2}{2^n} = \lim_{n \rightarrow \infty} \: \frac{2n}{2\cdot 2^n} = \lim_{n \rightarrow \infty} \: \frac{2}{4\cdot 2^n} = \lim_{n \rightarrow \infty} \: \frac{1}{4\cdot 2^n} = 0$$
+$$\\lim_{n \\rightarrow \\infty} \\: \\frac{n^2}{2^n} = \\lim_{n \\rightarrow \\infty} \\: \\frac{2n}{2\\cdot 2^n} = \\lim_{n \\rightarrow \\infty} \\: \\frac{2}{4\\cdot 2^n} = \\lim_{n \\rightarrow \\infty} \\: \\frac{1}{4\\cdot 2^n} = 0$$
 
 The [master theorem](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)) has a silly name. It's not even the coolest theorem of algorithms.
 ### Algorithms
@@ -400,7 +400,7 @@ Algorithms were a buzzword 5 years ago but you now know they are (simply) just c
 
 You know how much the internet loves sorting list algorithms, and now you realise why. It's just what every CS 101 class teaches at the start. Time to start hating on Bubble-sort because it has $O(n^2)$ behaviour and Insertion sort is not much better. This is also where you learn that algorithms should be judged based on their worst-case behaviour. This is why despite being called "[Quicksort](https://en.wikipedia.org/wiki/Quicksort)", it falls in the class of algorithms with $O(n^2)$ runtime for its behaviour on a fully sorted list.
 
-The king and queen of sorting lists are [Mergesort](https://en.wikipedia.org/wiki/Merge_sort) and [Heapsort](https://en.wikipedia.org/wiki/Heapsort). The latter involves a dreadful datastructure you are only now wrapping your head around. You feel silly for all the people who told you that Quicksort is the best when Mergesort is obviously superior. Not only is it superior, it is optimal! You prove that comparison-based sorting can never go beyond $O(n \cdot \textrm{log}(n))$ runtime.
+The king and queen of sorting lists are [Mergesort](https://en.wikipedia.org/wiki/Merge_sort) and [Heapsort](https://en.wikipedia.org/wiki/Heapsort). The latter involves a dreadful datastructure you are only now wrapping your head around. You feel silly for all the people who told you that Quicksort is the best when Mergesort is obviously superior. Not only is it superior, it is optimal! You prove that comparison-based sorting can never go beyond $O(n \\cdot \\textrm{log}(n))$ runtime.
 
 But why do we even care about sorting a list? Because then we can search it! Binary-search is your first encounter with "divide-and-conquer" tactics and it is probably still the best algorithm ever invented. When you implement it by yourself for the first time you get the indices wrong and cause an infinite recursion loop.
 
@@ -423,16 +423,16 @@ A [MST](https://en.wikipedia.org/wiki/Minimum_spanning_tree) answers the questio
 ### Linear Algebra
 Are you tired of math yet? I hope not, we're only getting started.
 
-You learned about vectors in the before times, but now is the first time you learn about "vector space". Vectors are a way to model any algebra where the elements can be added together and scaled by constant factors. For example points in 3d space behave like the vector space $\mathbb{R}^3$ describes.
+You learned about vectors in the before times, but now is the first time you learn about "vector space". Vectors are a way to model any algebra where the elements can be added together and scaled by constant factors. For example points in 3d space behave like the vector space $\\mathbb{R}^3$ describes.
 
 You learn that linear sets of equations can be solved in vector spaces with [Gaussian elimination](https://en.wikipedia.org/wiki/Gaussian_elimination):
 $$
-\begin{align*} 2x_1 + 3x_2 - x_3 &= 8 \\ -4x_1 + x_2 + 2x_3 &= 3 \\ x_1 - 2x_2 + 5x_3 &= -1 \end{align*} $$
+\\begin{align*} 2x_1 + 3x_2 - x_3 &= 8 \\\\ -4x_1 + x_2 + 2x_3 &= 3 \\\\ x_1 - 2x_2 + 5x_3 &= -1 \\end{align*} $$
 Can be written as:
-$$ \begin{pmatrix} 2 & 3 & -1 \\ -4 & 1 & 2 \\ 1 & -2 & 5 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 8 \\ 3 \\ -1 \end{pmatrix}$$
+$$ \\begin{pmatrix} 2 & 3 & -1 \\\\ -4 & 1 & 2 \\\\ 1 & -2 & 5 \\end{pmatrix} \\begin{pmatrix} x_1 \\\\ x_2 \\\\ x_3 \\end{pmatrix} = \\begin{pmatrix} 8 \\\\ 3 \\\\ -1 \\end{pmatrix}$$
 And then be turned into row-echelon form
 $$
-\begin{pmatrix} 1 & -2 & 5 & | & -1 \\ 0 & -7 & 22 & | & -1 \\ 0 & 0 & 11 & | & 9 \end{pmatrix}
+\\begin{pmatrix} 1 & -2 & 5 & | & -1 \\\\ 0 & -7 & 22 & | & -1 \\\\ 0 & 0 & 11 & | & 9 \\end{pmatrix}
 $$
 Which gives us nice solutions for $x_1, x_2, x_3$ which I will not write down because my example ends up being ugly.
 
@@ -440,11 +440,11 @@ If a matrix has a solution like this for every vector, it is called invertible a
 
 Now not all matrices have these nice solvable systems, some contain "linearly-dependent rows" and after Gaussian elimination you may end up with something like
 $$
-\begin{pmatrix} 1 & 1 & 2 & | & 1 \\ 0 & 0 & 5 & | & -1 \\ 0 & 0 & 0 & | & 1 \end{pmatrix}
+\\begin{pmatrix} 1 & 1 & 2 & | & 1 \\\\ 0 & 0 & 5 & | & -1 \\\\ 0 & 0 & 0 & | & 1 \\end{pmatrix}
 $$
 Now turns out in this case this is no longer solvable due to no values $x_1, x_2, x_3$ fulfilling the last row. But in some cases we may get
 $$
-\begin{pmatrix} 1 & 1 & 2 & | & 1 \\ 0 & 0 & 5 & | & -1 \\ 0 & 0 & 0 & | & 0 \end{pmatrix}
+\\begin{pmatrix} 1 & 1 & 2 & | & 1 \\\\ 0 & 0 & 5 & | & -1 \\\\ 0 & 0 & 0 & | & 0 \\end{pmatrix}
 $$
 And now we not only have 1 solution, but infinitely many!
 
@@ -462,74 +462,74 @@ Getting to the big boy decompositions now. Matrices have eigenvectors, these are
 
 Anyway, all matrices that are diagonalizable can be written as $M = PDP^{-1}$ where $P$ contains the eigenvectors and diagonal matrix $D$ contains the eigenvalues. $P$ defines a base change of the normal vector space into one where $D$ can *just* apply scaling and then we move everything back to $P^{-1}$. It's a bit like manoeuvring yourself around a football until you can kick it perfectly straight to the goal and then walking back to your bench. GOAL!
 
-Now, I assume future employers won't accept your explanation of geometric varieties as why your program using cool eigenvalues crashed on the newest matrix. So let's instead use *singular* values and instead of a single matrix we $P$ we need two matrices to do your rotation stuff. This gives us the $SVD$ decomposition $M = U \Sigma V^H$. Now our singular values are no longer allowed to be complex or negative because all the complex rotation work is done by the other guys. I promise you it's better.
+Now, I assume future employers won't accept your explanation of geometric varieties as why your program using cool eigenvalues crashed on the newest matrix. So let's instead use *singular* values and instead of a single matrix we $P$ we need two matrices to do your rotation stuff. This gives us the $SVD$ decomposition $M = U \\Sigma V^H$. Now our singular values are no longer allowed to be complex or negative because all the complex rotation work is done by the other guys. I promise you it's better.
 
 
 ### Logic, Sets and Functions
-We can say that something $X$ is true or false. We can combine $X \land Y$ and know it is only true if both are true. We can create arbitrarily complicated formulae out of these atoms, $\land$, $\lor$, $\neg$. Some of these formulas are always true if another is true, we say one formula is implied by another. The formula that is implied by all formulas is $\top$ and the one that is implied by none is $\bot$.
+We can say that something $X$ is true or false. We can combine $X \\land Y$ and know it is only true if both are true. We can create arbitrarily complicated formulae out of these atoms, $\\land$, $\\lor$, $\\neg$. Some of these formulas are always true if another is true, we say one formula is implied by another. The formula that is implied by all formulas is $\\top$ and the one that is implied by none is $\\bot$.
 
-Now consider that we have a set of things, for example $X = \\{x_1, x_2, x_3\\}$. Now we also have ways to check if something holds for values in a set, for example $p$ is only true for $x_2$, we write $p(x_2)$ holds.
+Now consider that we have a set of things, for example $X = \\\\{x_1, x_2, x_3\\\\}$. Now we also have ways to check if something holds for values in a set, for example $p$ is only true for $x_2$, we write $p(x_2)$ holds.
 
-$\forall$ means "forall", so if we say $\forall x, p(x)$ we mean the statement "for each element in $X$ we know that the predicate $p$ holds". This is not true in our case, because we can see that for example $p(x_1)$ does not hold. $\exists$ means "exists". $\exists x, p(x)$ is true because we can choose $x_2$ and $p(x_2)$ holds. Indeed, $\forall$ and $\exists$ are exactly linked in such a way that the negation of $\forall$ implies there exists at least a single negation. The barber shaves himself.
+$\\forall$ means "forall", so if we say $\\forall x, p(x)$ we mean the statement "for each element in $X$ we know that the predicate $p$ holds". This is not true in our case, because we can see that for example $p(x_1)$ does not hold. $\\exists$ means "exists". $\\exists x, p(x)$ is true because we can choose $x_2$ and $p(x_2)$ holds. Indeed, $\\forall$ and $\\exists$ are exactly linked in such a way that the negation of $\\forall$ implies there exists at least a single negation. The barber shaves himself.
 
-Let's look back at our collections of things, we called them sets. We know a bunch of sets already, like the natural numbers $\mathbb{N}$ or the real numbers $\mathbb{R}$. We can take elements in a set and then say they are contained as follows: $1 \in \mathbb{N}$ and $0.5 \not\in \mathbb{R}$. We say that if one set is contained within another, that it is a subset, for example $\mathbb{P} \subset \mathbb{N}$ where $\mathbb{P}$ is the set of primes. We can define sets with predicates as follows:
-$$\mathbb{P} = \\{p | p \neq 1 \land \forall x, \neg (1 < x < p) \lor \neg (\exists m, p = m \cdot x)\\}$$
-Simple really, as long as you stare it a bunch of times. Speaking of a bunch of times, $\times$ is a symbol to combine sets into sets of tuples. It is associative or not depending on who you ask. Math hasn't advanced far enough yet to tell us.
+Let's look back at our collections of things, we called them sets. We know a bunch of sets already, like the natural numbers $\\mathbb{N}$ or the real numbers $\\mathbb{R}$. We can take elements in a set and then say they are contained as follows: $1 \\in \\mathbb{N}$ and $0.5 \\not\\in \\mathbb{R}$. We say that if one set is contained within another, that it is a subset, for example $\\mathbb{P} \\subset \\mathbb{N}$ where $\\mathbb{P}$ is the set of primes. We can define sets with predicates as follows:
+$$\\mathbb{P} = \\\\{p | p \\neq 1 \\land \\forall x, \\neg (1 < x < p) \\lor \\neg (\\exists m, p = m \\cdot x)\\\\}$$
+Simple really, as long as you stare it a bunch of times. Speaking of a bunch of times, $\\times$ is a symbol to combine sets into sets of tuples. It is associative or not depending on who you ask. Math hasn't advanced far enough yet to tell us.
 
 Given a set, we can have different predicates defined upon it and these predicates can have different properties. The most interesting number as always is $2$, so let's look at predicates which are defined between two values. $x < y$ defines that $x$ is smaller than $y$ which we all know. We probably also intuitively understand that if $x$ is smaller than $y$ and $y$ is smaller than $z$, then $x$ is smaller than $z$. This is called *transitivity*. What $<$ is not is *symmetric*, because we cannot just swap $x < y$ to $y < x$ and still have it be true. Indeed it is *antisymmetric*, because its always wrong for all values. It is also not reflexive, because $x < x$ does not hold.
 
-We call predicates which are transitive, symmetric and reflexive "[equivalence relations](https://en.wikipedia.org/wiki/Equivalence_relation)" and they basically behave like equality but more things are allowed to be equal. All the values which are equal to one-another are collected in an equivalence class. An easy equivalence relation is collecting all the odd numbers in one equivalence relation and all the even numbers in another. We may call this $\equiv_2$ because it distinguishes based on if values are divisible by 2 or not.
+We call predicates which are transitive, symmetric and reflexive "[equivalence relations](https://en.wikipedia.org/wiki/Equivalence_relation)" and they basically behave like equality but more things are allowed to be equal. All the values which are equal to one-another are collected in an equivalence class. An easy equivalence relation is collecting all the odd numbers in one equivalence relation and all the even numbers in another. We may call this $\\equiv_2$ because it distinguishes based on if values are divisible by 2 or not.
 
-We call predicates which are transitive, anti-symmetric and reflexive together with their carrier set "[posets](https://en.wikipedia.org/wiki/Partially_ordered_set)". These basically imply an order on the set where can say that some values are somehow smaller or larger than others. If we can say for all values that they are either smaller or larger than another, the order is *total*, this is what you expect from your normal $\leq$ or $\geq$.
+We call predicates which are transitive, anti-symmetric and reflexive together with their carrier set "[posets](https://en.wikipedia.org/wiki/Partially_ordered_set)". These basically imply an order on the set where can say that some values are somehow smaller or larger than others. If we can say for all values that they are either smaller or larger than another, the order is *total*, this is what you expect from your normal $\\leq$ or $\\geq$.
 
-Now it turns out that posets get a lot more interesting if you don't enforce total order. Namely the [Hasse Diagram](https://en.wikipedia.org/wiki/Hasse_diagram) doesn't stay a simple line, but rather becomes this cool web. Now if we can always choose any values in this Hasse Diagram and find a value that is above all of them (join) and a value that is below all of them (meet) then we call it a [Lattice](https://en.wikipedia.org/wiki/Lattice_(order)). Not to be confused with a [Lattice](https://en.wikipedia.org/wiki/Lattice_(group)) even if the Venn diagram of people who know these two concepts is practically a circle we just accept they have the same name. Poor Wikipedia Disambiguation Page. The most notable lattice is the one formed of the divides-by relation $|$ on the set of natural numbers $\mathbb{N}$.
+Now it turns out that posets get a lot more interesting if you don't enforce total order. Namely the [Hasse Diagram](https://en.wikipedia.org/wiki/Hasse_diagram) doesn't stay a simple line, but rather becomes this cool web. Now if we can always choose any values in this Hasse Diagram and find a value that is above all of them (join) and a value that is below all of them (meet) then we call it a [Lattice](https://en.wikipedia.org/wiki/Lattice_(order)). Not to be confused with a [Lattice](https://en.wikipedia.org/wiki/Lattice_(group)) even if the Venn diagram of people who know these two concepts is practically a circle we just accept they have the same name. Poor Wikipedia Disambiguation Page. The most notable lattice is the one formed of the divides-by relation $|$ on the set of natural numbers $\\mathbb{N}$.
 
 Now here's the thing, functions are just relations. They are weird relations, where we make sure that each value is only "connected" with one other value and they tend to map from one set to another. So you know what a function is of-course. Take an input, get an output. We go from domain to co-domain. If we hit every value in the co-domain we call the function surjective. If we don't hit any value twice, we call the function invective. If a function does both, it's a bijection and is invertible, i.e. there exists an inverse function $f^{-1}$ Wait but doesn't that mean that only sets of the same size can have bijections between them? For finite sets sure.
 
 Infinite sets are confusing and school probably always hand-waved them anyway. Infinity is not a number. But sets can be infinitely sized. Let's talk about cardinality instead of size. It doesn't make that much sense quantifiying this with numbers anymore, but amazingly, we can talk about if one set is larger than another through injections/surjective.
 
-Consider the set of all natural numbers $\mathbb{N}$ and the set of all even numbers $E$. Now obviously $E \subset \mathbb{N}$, so case closed, E is smaller than $\mathbb{N}$. Well, not exactly. You see we can define a function $f(n) = 2 \cdot n$. Now notice that this function hits every even value eventually, and no value is hit twice. So this is a bijective function and therefore $E \sim \mathbb{N}$, i.e. they have the same cardinality. We call sets that have the same cardinality (or less but are still infinite, grumble grumble) as $\mathbb{N}$ countably infinite. $\mathbb{Z}$ has the same cardinality as $\mathbb{N}$ due to bijective functions like $f(n) = -1^{n-1} \cdot \lceil\frac{n}{2}\rceil$.
+Consider the set of all natural numbers $\\mathbb{N}$ and the set of all even numbers $E$. Now obviously $E \\subset \\mathbb{N}$, so case closed, E is smaller than $\\mathbb{N}$. Well, not exactly. You see we can define a function $f(n) = 2 \\cdot n$. Now notice that this function hits every even value eventually, and no value is hit twice. So this is a bijective function and therefore $E \\sim \\mathbb{N}$, i.e. they have the same cardinality. We call sets that have the same cardinality (or less but are still infinite, grumble grumble) as $\\mathbb{N}$ countably infinite. $\\mathbb{Z}$ has the same cardinality as $\\mathbb{N}$ due to bijective functions like $f(n) = -1^{n-1} \\cdot \\lceil\\frac{n}{2}\\rceil$.
 
-Now, amazingly, the same does not hold for $\mathbb{R}$ (or $P(\mathbb{N})$). They are *larger* than $\mathbb{N}$ due to something called the [diagonalisation argument](https://en.wikipedia.org/wiki/Cantor%27s_diagonal_argument), which given any supposed surjective function from $\mathbb{N}$ to $\mathbb{R}$ can find us a real number not yet mapped. It's magical but also highly useful. You need to know it for the exam. No no no, not by heart, you need to be able to make it for new sets. Stop crying please, it's not that bad yet.
+Now, amazingly, the same does not hold for $\\mathbb{R}$ (or $P(\\mathbb{N})$). They are *larger* than $\\mathbb{N}$ due to something called the [diagonalisation argument](https://en.wikipedia.org/wiki/Cantor%27s_diagonal_argument), which given any supposed surjective function from $\\mathbb{N}$ to $\\mathbb{R}$ can find us a real number not yet mapped. It's magical but also highly useful. You need to know it for the exam. No no no, not by heart, you need to be able to make it for new sets. Stop crying please, it's not that bad yet.
 
 
 ### Modular Arithmetic and Algebras
-Now that we have the general concept of relations, let's focus on a specific type: Modular arithmetic. Consider the equivalence relation $\equiv_n = \\{(a, b) \in \mathbb{Z} \times \mathbb{Z} \textbar \\; n \textrm{ divides } (a - b) \\}$. Turns out the equivalence classes of this are exactly all the numbers which have the same remainder when divided by $n$. So we have stuff like $1 \equiv_3 4 \equiv_3 31$.
+Now that we have the general concept of relations, let's focus on a specific type: Modular arithmetic. Consider the equivalence relation $\\equiv_n = \\\\{(a, b) \\in \\mathbb{Z} \\times \\mathbb{Z} \\textbar \\\\; n \\textrm{ divides } (a - b) \\\\}$. Turns out the equivalence classes of this are exactly all the numbers which have the same remainder when divided by $n$. So we have stuff like $1 \\equiv_3 4 \\equiv_3 31$.
 
 Turns out that addition and multiplication still retains the same equivalence relationship. That means
-$$(a \equiv_n b \land c \equiv_n d) \rightarrow a + c \equiv_n b + d$$
-$$(a \equiv_n b \land c \equiv_n d) \rightarrow a \cdot c \equiv_n b \cdot d$$
+$$(a \\equiv_n b \\land c \\equiv_n d) \\rightarrow a + c \\equiv_n b + d$$
+$$(a \\equiv_n b \\land c \\equiv_n d) \\rightarrow a \\cdot c \\equiv_n b \\cdot d$$
 This gives us a lot of very strong guarantees to manipulate terms in modular arithmetic. Namely because polynomials are just addition and multiplication if $p$ is a polynomial then we can directly say
-$$a \equiv_n b \rightarrow p(a) \equiv_n p(b)$$
+$$a \\equiv_n b \\rightarrow p(a) \\equiv_n p(b)$$
 Furthermore, if we look at multiplication in specific, we notice that if we repeatedly do it, then we end up back at the same place (assuming $p$ is prime and $x$ is not divisible by $p$):
-$$x^{p-1} \equiv_p 1$$
+$$x^{p-1} \\equiv_p 1$$
 This is called [Fermat's Little Theorem](https://en.wikipedia.org/wiki/Fermat%27s_little_theorem) to distinguish from the [big theorem](https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem) which I could prove right now but the margins on this blogpost are too small. The little theorem is a direct consequence of the much cooler [Lagrange's Theorem](https://en.wikipedia.org/wiki/Lagrange%27s_theorem_(group_theory)) which is also absolutely relevant but more annoying to explain.
 
 Turns out that depending on which $n$ we do modular arithmetic on, we have different properties. In specific, multiplication is badly behaved for everything that has a common divisor with $n$. But for everything else, we have a marvellous property: Division. Or rather multiplication by an inverse. Given $a$ co-prime with $n$ we know there exists $a^{-1}$ such that
-$$a \cdot a^{-1} = a^{-1} \cdot a \equiv_n 1$$
-For example the multiplicative inverse for $7$ in modulo $11$ is $8$, because $7 \cdot 8 = 56 = 55 + 1 \equiv_{11} 1$. We can find the modular multiplicative inverse of any number by using the [Extended Euclidean Algorithm](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm). You should learn it by heart.
+$$a \\cdot a^{-1} = a^{-1} \\cdot a \\equiv_n 1$$
+For example the multiplicative inverse for $7$ in modulo $11$ is $8$, because $7 \\cdot 8 = 56 = 55 + 1 \\equiv_{11} 1$. We can find the modular multiplicative inverse of any number by using the [Extended Euclidean Algorithm](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm). You should learn it by heart.
 
 Given the set of numbers $Z_n$ (which are all the non-negative integers smaller than $n$ including $0$), we write $Z_n^*$ as removing all the values that are co-prime with $n$ and $0$. The size of this new set can be calculated with the [Euler Totient Function](https://en.wikipedia.org/wiki/Euler%27s_totient_function).
 
 Now, here's the awesome part: We don't even need to talk about modular arithmetic or numbers or anything at all to define these theorems. Rather abstracting away the numbers, we can talk about Algebra. Not the algebra you knew in school, but rather the study of structures.
 
-The monoid is to sets what the monad is to categories of endofunctors. In a monoid you have a set, an operator like $+$ or $\cdot$ and a few guarantees: You have an element which when used on other elements, does not change them. It is called the neutral element. For example for $+$ we tend to write $0$ for the neutral element and in $\cdot$ we write $1$. The other property is associative, which means you don't need to use parentheses.
+The monoid is to sets what the monad is to categories of endofunctors. In a monoid you have a set, an operator like $+$ or $\\cdot$ and a few guarantees: You have an element which when used on other elements, does not change them. It is called the neutral element. For example for $+$ we tend to write $0$ for the neutral element and in $\\cdot$ we write $1$. The other property is associative, which means you don't need to use parentheses.
 
-Now monoids are cool, but groups are better. They additionally guarantee that each element has an inverse. This means we can undo our operation. Note that neither monoids nor groups guarantee that the operation is symmetric, so we may have $x \star y \neq y \star x$.
+Now monoids are cool, but groups are better. They additionally guarantee that each element has an inverse. This means we can undo our operation. Note that neither monoids nor groups guarantee that the operation is symmetric, so we may have $x \\star y \\neq y \\star x$.
 
-Why are we talking about these monoids and groups? Because modular arithmetic is a great example! $\langle Z_n; +\rangle$ is a group, as is $\langle Z_n^*; \cdot\rangle$. This means we can apply our fancy Lagrange's theorem on them. For that we can look at the order of a group, which is just its number of elements, boring. But now if we look at any single one element of a group, it will have its own order! Namely the order is how many times you can repeatedly apply the operation to the element until we get back to the original. In $\langle Z_5^*; \cdot\rangle$ the order of $4$ is $2$ because $4^2 = 16 \equiv_5 1$.
+Why are we talking about these monoids and groups? Because modular arithmetic is a great example! $\\langle Z_n; +\\rangle$ is a group, as is $\\langle Z_n^*; \\cdot\\rangle$. This means we can apply our fancy Lagrange's theorem on them. For that we can look at the order of a group, which is just its number of elements, boring. But now if we look at any single one element of a group, it will have its own order! Namely the order is how many times you can repeatedly apply the operation to the element until we get back to the original. In $\\langle Z_5^*; \\cdot\\rangle$ the order of $4$ is $2$ because $4^2 = 16 \\equiv_5 1$.
 
-Now it turns out that groups have certain properties and structures that helps us differentiate them from each other, for example it turns out that $\langle Z_4; +\rangle$ and $\langle Z_2 \times Z_2; +\rangle$ behave differently, despite having the same number of elements. We say that two groups behave the same, if they are isomorphic to each other, i.e. if there exists an $f: A \rightarrow B$ such that
-$$\forall a_1, a_2 \in A, \\; f(a_1) \star f(a_2) = f(a_1 \cdot a_2)$$
-This concept of isomorphism is very powerful, but you don't know that yet. One useful isomorphism consists between cyclic groups of order $n$, these are groups in which every element has the order of the group. It turns out we can prove that all these cyclic groups are isomorphic to each other. A famous cyclic group of size $n$ is $\langle Z_n ; + \rangle$, which basically means that cyclic groups are never more complicated than just addition, they just look more complicated.
+Now it turns out that groups have certain properties and structures that helps us differentiate them from each other, for example it turns out that $\\langle Z_4; +\\rangle$ and $\\langle Z_2 \\times Z_2; +\\rangle$ behave differently, despite having the same number of elements. We say that two groups behave the same, if they are isomorphic to each other, i.e. if there exists an $f: A \\rightarrow B$ such that
+$$\\forall a_1, a_2 \\in A, \\\\; f(a_1) \\star f(a_2) = f(a_1 \\cdot a_2)$$
+This concept of isomorphism is very powerful, but you don't know that yet. One useful isomorphism consists between cyclic groups of order $n$, these are groups in which every element has the order of the group. It turns out we can prove that all these cyclic groups are isomorphic to each other. A famous cyclic group of size $n$ is $\\langle Z_n ; + \\rangle$, which basically means that cyclic groups are never more complicated than just addition, they just look more complicated.
 
 All of this group stuff gives us some pretty cool guarantees like associativity and hardness of the discrete log allowing for baby's first cryptographic primitives like [DH](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) and [RSA](https://en.wikipedia.org/wiki/RSA_cryptosystem). Turns out that it's all just isomorphic to addition doesn't make these things unsafe, because finding isomorphisms is hard.
 
-Now if we have a set that behaves well with both $+$ and $\cdot$, then we may call it a ring. A ring gives us a group with $+$ and a monoid with $\cdot$ which means we can add normally and not divide. That sounds an awful lot like $\mathbb{Z}$. And indeed that supports no division except by its [units](https://en.wikipedia.org/wiki/Unit_(ring_theory)) $1$ and $-1$. That's pretty cool. Also distributivity etc. applies which gives us symmetry in addition for free.
+Now if we have a set that behaves well with both $+$ and $\\cdot$, then we may call it a ring. A ring gives us a group with $+$ and a monoid with $\\cdot$ which means we can add normally and not divide. That sounds an awful lot like $\\mathbb{Z}$. And indeed that supports no division except by its [units](https://en.wikipedia.org/wiki/Unit_(ring_theory)) $1$ and $-1$. That's pretty cool. Also distributivity etc. applies which gives us symmetry in addition for free.
 
 Indeed we can create rings of many sizes simply by making polynomials modulo some $n$. For example $Z_2[x]$ describes all polynomials which only have binary coefficients. And indeed under addition they behave the same way as their corresponding binary strings under ``xor`` also known as ``^`` by people who interface more with pointers than exponents. Isomorphism! 
 
-Finally, let's combine all our powers to ask for even more: A group structure in terms of addition and multiplication. This means we can divide now! Fields be praised! (They are called fields, im not just praising agriculture.) And indeed our old friend $\mathbb{R}$ fulfils this. Also their small sibling $\mathbb{Q}$ does it as well, whilst being countably infinite. But what about finite fields? Galois fields? Who is Galois? Some guy.
+Finally, let's combine all our powers to ask for even more: A group structure in terms of addition and multiplication. This means we can divide now! Fields be praised! (They are called fields, im not just praising agriculture.) And indeed our old friend $\\mathbb{R}$ fulfils this. Also their small sibling $\\mathbb{Q}$ does it as well, whilst being countably infinite. But what about finite fields? Galois fields? Who is Galois? Some guy.
 
 We can construct finite fields by taking our rings modulo an integer and taking them modulo *again* but this time an irreducible polynomial. What is an irreducible polynomial? It's like a prime number but a polynomial. Given such a finite field $Z_n[x]_{p(x)}$ we indeed can find that all polynomials within it have a multiplicative inverse. How do we find it? Extended Euclidean Algorithm again, but even more complicated.
 
@@ -538,14 +538,14 @@ Now we had our fancy logic, but turns out that we have not yet discussed how we 
 
 Well turns out that statements are either true or false and we hope to create a system where true statements never imply false statements, we call this *consistent*. We also want to be able to prove all of our true statements so that our system is *complete*.
 
-One proof system is that of [Propositional Logic](https://en.wikipedia.org/wiki/Propositional_logic) which is the one previously discussed. But we can now formally prove statement like $A \land B \vdash B$. Well "formally" is an overstatement, we tend to use a bunch of words still. Inevitable unless we want to create some meta-system first.
+One proof system is that of [Propositional Logic](https://en.wikipedia.org/wiki/Propositional_logic) which is the one previously discussed. But we can now formally prove statement like $A \\land B \\vdash B$. Well "formally" is an overstatement, we tend to use a bunch of words still. Inevitable unless we want to create some meta-system first.
 
-Stuff gets more complicated with [Predicate Logic](https://en.wikipedia.org/wiki/First-order_logic) where we can use predicates and $\forall$ and $\exists$. But we can still establish general statements which are true *for every interpretation* of our predicates. For example $\forall x, p(x) \vdash \exists x, p(x)$.
+Stuff gets more complicated with [Predicate Logic](https://en.wikipedia.org/wiki/First-order_logic) where we can use predicates and $\\forall$ and $\\exists$. But we can still establish general statements which are true *for every interpretation* of our predicates. For example $\\forall x, p(x) \\vdash \\exists x, p(x)$.
 
-Given a statement $F \vdash G$, we can prove it by arguing that for every interpretation $A$ with a non-empty set of elements (also called the Universe $U$) that assigns all predicates, functions and free variables in $F$ and $G$ it holds that if A(F) holds then A(G) holds.
+Given a statement $F \\vdash G$, we can prove it by arguing that for every interpretation $A$ with a non-empty set of elements (also called the Universe $U$) that assigns all predicates, functions and free variables in $F$ and $G$ it holds that if A(F) holds then A(G) holds.
 
 We can also blankly prove some statements to be tautologies, i.e. to always hold. For example the famous  [barber shaving](https://en.wikipedia.org/wiki/Barber_paradox):
-$$\neg \exists y, (\forall x, \neg p(x, x) \leftrightarrow p(y,x))$$
+$$\\neg \\exists y, (\\forall x, \\neg p(x, x) \\leftrightarrow p(y,x))$$
 
 
 ## Continue reading
