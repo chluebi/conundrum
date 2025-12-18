@@ -135,8 +135,8 @@ We can take this "Cat" class and we can create instances of it which are then ca
 ```java
 Cat cat1 = new Cat();
 Cat cat2 = new Cat();
-cat1.meow(); // prints meow
-cat2.meow(); // prints meow
+cat1.speak(); // prints meow
+cat2.speak(); // prints meow
 ```
 
 Classes can have fields which is data that is stored with each object. These fields can get instantiated in a constructor.
@@ -188,8 +188,10 @@ class Animal {
 }
 
 class Cat extends Animal {
+	int cuteness;
 
 	public Cat(int age, int cuteness) {
+		super(age);
 		this.age = age * 7; // cat years
 		this.cuteness = cuteness;
 	}
