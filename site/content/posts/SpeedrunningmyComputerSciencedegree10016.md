@@ -549,7 +549,8 @@ $$\\neg \\exists y, (\\forall x, \\neg p(x, x) \\leftrightarrow p(y,x))$$
 
 
 ## Continue reading
-(Coming Soon)
+Check out [Part 2](https://chluebi.github.io/conundrum/posts/speedrunningmycomputersciencedegree10026/).
+
 
 
 
